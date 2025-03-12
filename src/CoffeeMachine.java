@@ -76,4 +76,30 @@ public class CoffeeMachine {
 
         }
     }
+
+    public static String findMostOrdered(ArrayList<Cup> orderHistory) {
+
+        String mostOrdered = null;
+        int maxCount = 0;
+
+        for (Cup currentCup : orderHistory) {
+            int count = 0;
+
+            for (Cup cup : orderHistory)
+                if (cup.getDrinkType().equals(currentCup.getDrinkType())) {
+                    count++;
+                }
+
+            if (count > maxCount) {
+                maxCount = count;
+                mostOrdered = currentCup.getDrinkType();
+            }
+        }
+        return mostOrdered;
+    }
+
+    public static void printStatistics(ArrayList<Cup> orderHistory) {
+        String mostOrderedCup = findMostOrdered(orderHistory);
+        System.out.println("Most ordered cup: " + mostOrderedCup);
+    }
 }
