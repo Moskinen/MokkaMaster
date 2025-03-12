@@ -1,4 +1,4 @@
-public class Cup {
+public class Cup implements Comparable<Cup> {
 
     private String drinkType;
     private Size size;
@@ -41,5 +41,10 @@ public class Cup {
                 ", size=" + size +
                 ", hasWhippedCream=" + hasWhippedCream +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Cup o) {
+        return 0;
     }
 }
