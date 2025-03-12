@@ -10,11 +10,6 @@ public class Cup {
         this.hasWhippedCream = hasWhippedCream;
     }
 
-    public Cup(String drinkType, Size size) {
-        this.drinkType = drinkType;
-        this.size = size;
-    }
-
     public String getDrinkType() {
         return drinkType;
     }
